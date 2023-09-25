@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdressBook", "AdressBook\AdressBook.csproj", "{E2347BF4-9EE5-42F7-A272-AD747BE9FBDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdressBook_Test.tests", "AdressBook_Test.tests\AdressBook_Test.tests.csproj", "{6C3AFEC3-F975-4300-BDDF-2D79AC4ED7DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2347BF4-9EE5-42F7-A272-AD747BE9FBDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2347BF4-9EE5-42F7-A272-AD747BE9FBDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2347BF4-9EE5-42F7-A272-AD747BE9FBDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2347BF4-9EE5-42F7-A272-AD747BE9FBDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C3AFEC3-F975-4300-BDDF-2D79AC4ED7DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C3AFEC3-F975-4300-BDDF-2D79AC4ED7DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C3AFEC3-F975-4300-BDDF-2D79AC4ED7DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C3AFEC3-F975-4300-BDDF-2D79AC4ED7DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9653B177-5350-4960-82AE-DF6E550987A8}
+	EndGlobalSection
+EndGlobal
