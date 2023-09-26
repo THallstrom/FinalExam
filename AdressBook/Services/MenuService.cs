@@ -8,50 +8,6 @@ public static class MenuService
     private static readonly IUserService _userService = new UserService();
     public static void AddUser()
     {
-        throw new NotImplementedException();
-    }
-
-    public static void DeleteUser()
-    {
-        throw new NotImplementedException();
-    }
-
-    public static void MainMenu()
-    {
-        try
-        {
-            Console.WriteLine("");
-            Console.WriteLine("1. Lägg till i adressboken");
-            Console.WriteLine("2. Skriv ut en användare");
-            Console.WriteLine("3. Skriv ut alla användare");
-            Console.WriteLine("4. Ändra uppgifter om användare");
-            Console.WriteLine("5. Radera användare");
-            Console.WriteLine("0. Avsluta");
-            Console.Write("Välj det val som passar:");
-            var option = Console.ReadLine();
-            switch (option)
-            {
-                case "1":
-                    break;
-                case "2":
-                    break;
-                case "3":
-                    break;
-                case "4":
-                    break;
-                case "5":
-                    break;
-                case "0":
-                    break;
-            }
-        }
-        catch (Exception)
-        {
-
-            throw;
-        }
-
-
         User user = new User
         {
             FirstName = "Thomas",
@@ -68,20 +24,87 @@ public static class MenuService
             }
         };
         _userService.AddUser(user);
+        User user1 = new User
+        {
+            FirstName = "Tina",
+            LastName = "Granne",
+            Email = "tine@hotmail.com",
+            PhoneNumber = "0706815562",
+
+            Address = new Address
+            {
+                StreetNumber = "119",
+                StreetAdress = "Kvartärvägen",
+                PostalCode = "13732",
+                City = "Haninge"
+            }
+        };
+        _userService.AddUser(user1);
+    }
+
+    public static void DeleteUser()
+    {
+        var list = _userService.PrintAllUser();
         PrintAllUser();
+        Console.WriteLine("Vilken användare önskar du radera: ");
+        var option = Convert.ToInt32(Console.ReadLine());
+        _userService.DeleteUser(list[option]);
+    }
+
+    public static void MainMenu()
+    {
+        try
+        {
+            do
+            {
+                Console.WriteLine("");
+                Console.WriteLine("1. Lägg till i adressboken");
+                Console.WriteLine("2. Skriv ut en användare");
+                Console.WriteLine("3. Skriv ut alla användare");
+                Console.WriteLine("4. Ändra uppgifter om användare");
+                Console.WriteLine("5. Radera användare");
+                Console.WriteLine("0. Avsluta");
+                Console.Write("Välj det val som passar:");
+                var option = Console.ReadLine();
+                switch (option)
+                {
+                    case "1":
+                        AddUser();
+                        break;
+                    case "2":
+                        break;
+                    case "3":
+                        PrintAllUser();
+                        break;
+                    case "4":
+                        break;
+                    case "5":
+                        DeleteUser();
+                        break;
+                    case "0":
+                        Environment.Exit(0);
+                        break;
+                }
+            } while (true);
+        }
+        catch { }
     }
 
     public static void PrintAllUser()
     {
         var list = _userService.PrintAllUser();
+        var i = 0;
+        Console.Clear();
         foreach (var item in list)
         {
-            Console.WriteLine($"{item.FirstName} {item.LastName}");
+            Console.WriteLine($"{i} {item.FirstName} {item.LastName}");
+            i++;
         }
-        Console.ReadLine();
+        Console.WriteLine();
+        
     }
 
-    public static void PrintOnUser()
+    public static void PrintOneUser()
     {
         throw new NotImplementedException();
     }

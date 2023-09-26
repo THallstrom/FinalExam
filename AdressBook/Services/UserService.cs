@@ -11,9 +11,10 @@ public class UserService : IUserService
         _users.Add(user);
     }
 
-    public void DeleteUser()
+    public void DeleteUser(User user)
     {
-        throw new NotImplementedException();
+        _users.Remove(user);
+        // throw new NotImplementedException();
     }
 
     public List<User> PrintAllUser()

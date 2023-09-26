@@ -8,5 +8,5 @@ public interface IUserService
     List <User> PrintAllUser();
     void PrintOneUSer();
     void SearchUser();
-    void DeleteUser();
+    void DeleteUser(User user);
 }

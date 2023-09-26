@@ -12,3 +12,17 @@ C:\Nackademin\c-sharp\Inlämning C#\C#_FinalExam\AdressBook\obj\Debug\net7.0\ref
 C:\Nackademin\c-sharp\Inlämning C#\C#_FinalExam\AdressBook\obj\Debug\net7.0\AdressBook.pdb
 C:\Nackademin\c-sharp\Inlämning C#\C#_FinalExam\AdressBook\obj\Debug\net7.0\AdressBook.genruntimeconfig.cache
 C:\Nackademin\c-sharp\Inlämning C#\C#_FinalExam\AdressBook\obj\Debug\net7.0\ref\AdressBook.dll
+C:\skola\FinalExam\AdressBook\bin\Debug\net7.0\AdressBook.exe
+C:\skola\FinalExam\AdressBook\bin\Debug\net7.0\AdressBook.deps.json
+C:\skola\FinalExam\AdressBook\bin\Debug\net7.0\AdressBook.runtimeconfig.json
+C:\skola\FinalExam\AdressBook\bin\Debug\net7.0\AdressBook.dll
+C:\skola\FinalExam\AdressBook\bin\Debug\net7.0\AdressBook.pdb
+C:\skola\FinalExam\AdressBook\obj\Debug\net7.0\AdressBook.GeneratedMSBuildEditorConfig.editorconfig
+C:\skola\FinalExam\AdressBook\obj\Debug\net7.0\AdressBook.AssemblyInfoInputs.cache
+C:\skola\FinalExam\AdressBook\obj\Debug\net7.0\AdressBook.AssemblyInfo.cs
+C:\skola\FinalExam\AdressBook\obj\Debug\net7.0\AdressBook.csproj.CoreCompileInputs.cache
+C:\skola\FinalExam\AdressBook\obj\Debug\net7.0\AdressBook.dll
+C:\skola\FinalExam\AdressBook\obj\Debug\net7.0\refint\AdressBook.dll
+C:\skola\FinalExam\AdressBook\obj\Debug\net7.0\AdressBook.pdb
+C:\skola\FinalExam\AdressBook\obj\Debug\net7.0\AdressBook.genruntimeconfig.cache
+C:\skola\FinalExam\AdressBook\obj\Debug\net7.0\ref\AdressBook.dll
