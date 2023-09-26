@@ -18,6 +18,40 @@ public static class MenuService
 
     public static void MainMenu()
     {
+        try
+        {
+            Console.WriteLine("");
+            Console.WriteLine("1. Lägg till i adressboken");
+            Console.WriteLine("2. Skriv ut en användare");
+            Console.WriteLine("3. Skriv ut alla användare");
+            Console.WriteLine("4. Ändra uppgifter om användare");
+            Console.WriteLine("5. Radera användare");
+            Console.WriteLine("0. Avsluta");
+            Console.Write("Välj det val som passar:");
+            var option = Console.ReadLine();
+            switch (option)
+            {
+                case "1":
+                    break;
+                case "2":
+                    break;
+                case "3":
+                    break;
+                case "4":
+                    break;
+                case "5":
+                    break;
+                case "0":
+                    break;
+            }
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+
+
         User user = new User
         {
             FirstName = "Thomas",
