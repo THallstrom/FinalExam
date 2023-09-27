@@ -14,7 +14,6 @@ public class UserService : IUserService
     public void DeleteUser(User user)
     {
         _users.Remove(user);
-        // throw new NotImplementedException();
     }
 
     public List<User> PrintAllUser()
@@ -22,8 +21,11 @@ public class UserService : IUserService
         return _users;
     }
 
-    public void PrintOneUSer()
+    public  PrintOneUSer(string name)
     {
+        return _users.FirstOrDefault(x => x.FirstName == name);
+
+
         throw new NotImplementedException();
     }
 

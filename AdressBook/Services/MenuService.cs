@@ -45,7 +45,7 @@ public static class MenuService
     public static void DeleteUser()
     {
         var list = _userService.PrintAllUser();
-        PrintAllUser();
+        PrintList();
         Console.WriteLine("Vilken användare önskar du radera: ");
         var option = Convert.ToInt32(Console.ReadLine());
         _userService.DeleteUser(list[option]);
@@ -57,6 +57,7 @@ public static class MenuService
         {
             do
             {
+                // Console.Clear();
                 Console.WriteLine("");
                 Console.WriteLine("1. Lägg till i adressboken");
                 Console.WriteLine("2. Skriv ut en användare");
@@ -72,6 +73,7 @@ public static class MenuService
                         AddUser();
                         break;
                     case "2":
+                        PrintOneUser();
                         break;
                     case "3":
                         PrintAllUser();
@@ -92,6 +94,12 @@ public static class MenuService
 
     public static void PrintAllUser()
     {
+        PrintList();
+        Console.ReadLine();
+
+    }
+    public static void PrintList()
+    {
         var list = _userService.PrintAllUser();
         var i = 0;
         Console.Clear();
@@ -100,12 +108,11 @@ public static class MenuService
             Console.WriteLine($"{i} {item.FirstName} {item.LastName}");
             i++;
         }
-        Console.WriteLine();
-        
     }
 
     public static void PrintOneUser()
     {
+
         throw new NotImplementedException();
     }
 }
