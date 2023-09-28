@@ -112,7 +112,27 @@ public static class MenuService
 
     public static void PrintOneUser()
     {
+        try
+        {
+            Console.Write("Skriv in förnamnet på den du söker: ");
+            string searchUser = Console.ReadLine()!;
+            
+            if (searchUser != "")
+            {
+                var mySelf = _userService.PrintOneUser(searchUser.ToLower());
+                Console.WriteLine(mySelf.FirstName + " " + mySelf.LastName);
+            }
+            else
+            {
+                Console.WriteLine("Jag behöver ett namn att söka på");
+            }
+            // Console.ReadLine();
+        }
+        catch (Exception)
+        {
 
-        throw new NotImplementedException();
+            throw;
+        }
+
     }
 }

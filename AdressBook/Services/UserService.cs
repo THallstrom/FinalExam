@@ -21,16 +21,9 @@ public class UserService : IUserService
         return _users;
     }
 
-    public  PrintOneUSer(string name)
+    public IUser PrintOneUser(string name)
     {
-        return _users.FirstOrDefault(x => x.FirstName == name);
-
-
-        throw new NotImplementedException();
+        return _users.FirstOrDefault(x => x.FirstName.ToLower() == name)!;
     }
 
-    public void SearchUser()
-    {
-        throw new NotImplementedException();
-    }
 }

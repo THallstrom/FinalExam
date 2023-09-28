@@ -6,7 +6,6 @@ public interface IUserService
 {
     public void AddUser(User user);
     List <User> PrintAllUser();
-    IUser PrintOneUSer(string name);
-    void SearchUser();
+    public IUser PrintOneUser(string name);
     void DeleteUser(User user);
 }
