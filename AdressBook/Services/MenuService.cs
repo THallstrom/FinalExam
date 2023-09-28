@@ -7,9 +7,10 @@ public static class MenuService
 {
     private static readonly IUserService _userService = new UserService();
 
-    static void Message(int num)
+    static void Message(int num, User user)
     {
-        Console.WriteLine($"Användare tillagd till list, Listan innehåller: {num} personer");
+        Console.WriteLine($"{user.FirstName} {user.LastName} tillagd i listan");
+        Console.WriteLine($"Listan innehåller: {num} personer");
         Console.WriteLine("Click för att komma vidare");
         Console.ReadKey();
     }
@@ -32,7 +33,7 @@ public static class MenuService
         Console.Write("Postnummer:");
         user.Address.PostalCode = Console.ReadLine()!;
         var num = _userService.AddUser(user);
-        Message(num);
+        Message(num, user);
     }
 
     public static void AddUserCheat()
@@ -53,7 +54,7 @@ public static class MenuService
             }
         };
         var num = _userService.AddUser(user);
-        Message(num);
+        Message(num, user);
 
         User user1 = new User
         {
@@ -71,7 +72,7 @@ public static class MenuService
             }
         };
         num = _userService.AddUser(user1);
-        Message(num);
+        Message(num, user1);
     }
 
     public static void DeleteUser()
