@@ -6,9 +6,10 @@ namespace AdressBook.Services;
 public class UserService : IUserService
 {
     private readonly List<User> _users = new();
-    public void AddUser(User user)
+    public int AddUser(User user)
     {
         _users.Add(user);
+        return _users.Count;
     }
 
     public void DeleteUser(User user)
@@ -21,7 +22,7 @@ public class UserService : IUserService
         return _users;
     }
 
-    public IUser PrintOneUser(string name)
+    public User PrintOneUser(string name)
     {
         return _users.FirstOrDefault(x => x.FirstName.ToLower() == name)!;
     }

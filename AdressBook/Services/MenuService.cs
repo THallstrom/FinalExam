@@ -6,7 +6,36 @@ namespace AdressBook.Services;
 public static class MenuService
 {
     private static readonly IUserService _userService = new UserService();
+
+    static void Message(int num)
+    {
+        Console.WriteLine($"Användare tillagd till list, Listan innehåller: {num} personer");
+        Console.WriteLine("Click för att komma vidare");
+        Console.ReadKey();
+    }
     public static void AddUser()
+    {
+        User user = new User();
+        Console.Write("Förnamn: ");
+        user.FirstName = Console.ReadLine()!;
+        Console.Write("Efternamn: ");
+        user.LastName = Console.ReadLine()!;
+        Console.Write("Email: ");
+        user.Email = Console.ReadLine()!;
+        user.Address = new Address();
+        Console.Write("Gatunamn: ");
+        user.Address.StreetAdress = Console.ReadLine()!;
+        Console.Write("Gatunummer: ");
+        user.Address.StreetNumber = Console.ReadLine()!;
+        Console.Write("Postadress ");
+        user.Address.City = Console.ReadLine()!;
+        Console.Write("Postnummer:");
+        user.Address.PostalCode = Console.ReadLine()!;
+        var num = _userService.AddUser(user);
+        Message(num);
+    }
+
+    public static void AddUserCheat()
     {
         User user = new User
         {
@@ -15,7 +44,7 @@ public static class MenuService
             Email = "minimoto@hotmail.com",
             PhoneNumber = "0706815628",
 
-            Address = new Address
+            Address = new Models.Address
             {
                 StreetNumber = "117",
                 StreetAdress = "Kvartärvägen",
@@ -23,7 +52,9 @@ public static class MenuService
                 City = "Haninge"
             }
         };
-        _userService.AddUser(user);
+        var num = _userService.AddUser(user);
+        Message(num);
+
         User user1 = new User
         {
             FirstName = "Tina",
@@ -31,7 +62,7 @@ public static class MenuService
             Email = "tine@hotmail.com",
             PhoneNumber = "0706815562",
 
-            Address = new Address
+            Address = new Models.Address
             {
                 StreetNumber = "119",
                 StreetAdress = "Kvartärvägen",
@@ -39,7 +70,8 @@ public static class MenuService
                 City = "Haninge"
             }
         };
-        _userService.AddUser(user1);
+        num = _userService.AddUser(user1);
+        Message(num);
     }
 
     public static void DeleteUser()
@@ -57,7 +89,7 @@ public static class MenuService
         {
             do
             {
-                // Console.Clear();
+                Console.Clear();
                 Console.WriteLine("");
                 Console.WriteLine("1. Lägg till i adressboken");
                 Console.WriteLine("2. Skriv ut en användare");
@@ -82,6 +114,9 @@ public static class MenuService
                         break;
                     case "5":
                         DeleteUser();
+                        break;
+                    case "6":
+                        AddUserCheat();
                         break;
                     case "0":
                         Environment.Exit(0);
@@ -116,7 +151,7 @@ public static class MenuService
         {
             Console.Write("Skriv in förnamnet på den du söker: ");
             string searchUser = Console.ReadLine()!;
-            
+
             if (searchUser != "")
             {
                 var mySelf = _userService.PrintOneUser(searchUser.ToLower());
