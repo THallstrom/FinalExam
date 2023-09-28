@@ -8,7 +8,14 @@ public class UserService : IUserService
     private readonly List<User> _users = new();
     public int AddUser(User user)
     {
+        //using StreamReader sr = new(@"C:\Nackademin\c-sharp\FinalExam\TestFile");
+        //sr.ReadToEnd();
+        //Console.WriteLine(sr.ReadToEnd());
+
         _users.Add(user);
+
+        //using StreamWriter sw = new StreamWriter(@"C:\Nackademin\TestFile.txt");
+        //sw.WriteLine(_users);
         return _users.Count;
     }
 

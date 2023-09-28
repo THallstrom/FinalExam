@@ -119,6 +119,12 @@ public static class MenuService
                     case "6":
                         AddUserCheat();
                         break;
+                    case "7":
+                        var file = new FileHandler();
+                        var TestFile = file.ReadFromFile(@"C:\Nackademin\TestFile.txt");
+                        Console.WriteLine(TestFile.ToString());
+                        Console.ReadLine();
+                        break;
                     case "0":
                         Environment.Exit(0);
                         break;
