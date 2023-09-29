@@ -19,9 +19,10 @@ public class UserService : IUserService
         return _users.Count;
     }
 
-    public void DeleteUser(User user)
+    public int DeleteUser(User user)
     {
         _users.Remove(user);
+        return _users.Count;
     }
 
     public List<User> PrintAllUser()
@@ -31,7 +32,12 @@ public class UserService : IUserService
 
     public User PrintOneUser(string name)
     {
-        return _users.FirstOrDefault(x => x.FirstName.ToLower() == name)!;
+        try
+        {
+            return _users.FirstOrDefault(x => x.FirstName.ToLower() == name.ToLower())!;
+        }
+        catch { }
+        return _users[0];
     }
 
 }

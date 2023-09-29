@@ -7,5 +7,5 @@ public interface IUserService
     public int AddUser(User user);
     List <User> PrintAllUser();
     public User PrintOneUser(string name);
-    void DeleteUser(User user);
+    public int DeleteUser(User user);
 }
