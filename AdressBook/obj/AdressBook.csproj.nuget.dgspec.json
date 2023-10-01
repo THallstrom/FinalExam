@@ -1,20 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\skola\\FinalExam\\AdressBook\\AdressBook.csproj": {}
+    "C:\\Users\\minim\\Source\\Repos\\FinalExam\\AdressBook\\AdressBook.csproj": {}
   },
   "projects": {
-    "C:\\skola\\FinalExam\\AdressBook\\AdressBook.csproj": {
+    "C:\\Users\\minim\\Source\\Repos\\FinalExam\\AdressBook\\AdressBook.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\skola\\FinalExam\\AdressBook\\AdressBook.csproj",
+        "projectUniqueName": "C:\\Users\\minim\\Source\\Repos\\FinalExam\\AdressBook\\AdressBook.csproj",
         "projectName": "AdressBook",
-        "projectPath": "C:\\skola\\FinalExam\\AdressBook\\AdressBook.csproj",
+        "projectPath": "C:\\Users\\minim\\Source\\Repos\\FinalExam\\AdressBook\\AdressBook.csproj",
         "packagesPath": "C:\\Users\\minim\\.nuget\\packages\\",
-        "outputPath": "C:\\skola\\FinalExam\\AdressBook\\obj\\",
+        "outputPath": "C:\\Users\\minim\\Source\\Repos\\FinalExam\\AdressBook\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\minim\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,6 +45,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -8,4 +8,5 @@ public interface IUserService
     List <User> PrintAllUser();
     public User PrintOneUser(string name);
     public int DeleteUser(User user);
+    public void UpdateList();
 }

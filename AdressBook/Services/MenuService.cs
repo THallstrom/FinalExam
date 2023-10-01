@@ -1,11 +1,13 @@
 ﻿using AdressBook.Interface;
 using AdressBook.Models;
+using System.Diagnostics;
 
 namespace AdressBook.Services;
 
 public static class MenuService
 {
     private static readonly IUserService _userService = new UserService();
+    private static readonly FileHandler fileHandler = new FileHandler();
 
     static void Message(int num, User user)
     {
@@ -90,6 +92,7 @@ public static class MenuService
         {
             do
             {
+                _userService.UpdateList();
                 Console.Clear();
                 Console.WriteLine("");
                 Console.WriteLine("1. Lägg till i adressboken");
@@ -120,10 +123,7 @@ public static class MenuService
                         AddUserCheat();
                         break;
                     case "7":
-                        var file = new FileHandler();
-                        var TestFile = file.ReadFromFile(@"C:\Nackademin\TestFile.txt");
-                        Console.WriteLine(TestFile.ToString());
-                        Console.ReadLine();
+                        
                         break;
                     case "0":
                         Environment.Exit(0);
@@ -131,7 +131,10 @@ public static class MenuService
                 }
             } while (true);
         }
-        catch { }
+        catch (Exception ex)
+        {
+            Debug.WriteLine(ex.ToString());
+        }
     }
 
     public static void PrintAllUser()
