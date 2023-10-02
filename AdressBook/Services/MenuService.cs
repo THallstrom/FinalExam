@@ -79,11 +79,28 @@ public static class MenuService
 
     public static void DeleteUser()
     {
-        var list = _userService.PrintAllUser();
-        PrintList();
-        Console.WriteLine("Vilken användare önskar du radera: ");
-        var option = Convert.ToInt32(Console.ReadLine());
-        _userService.DeleteUser(list[option]);
+        try
+        {
+            var list = _userService.PrintAllUser();
+            if (list.Count != 0)
+            {
+                PrintList();
+                Console.WriteLine("Vilken användare önskar du radera: ");
+                var option = Convert.ToInt32(Console.ReadLine());
+                _userService.DeleteUser(list[option]);
+            }
+            else
+            {
+                Console.WriteLine("Adresslistan är tyvärr tom");
+                Console.ReadLine();
+            }
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+
     }
 
     public static void MainMenu()
@@ -123,7 +140,7 @@ public static class MenuService
                         AddUserCheat();
                         break;
                     case "7":
-                        
+
                         break;
                     case "0":
                         Environment.Exit(0);
@@ -145,35 +162,67 @@ public static class MenuService
     }
     public static void PrintList()
     {
-        var list = _userService.PrintAllUser();
-        var i = 0;
-        Console.Clear();
-        foreach (var item in list)
+        try
         {
-            Console.WriteLine($"{i} {item.FirstName} {item.LastName}");
-            i++;
-        }
-    }
+            var list = _userService.PrintAllUser();
+            var i = 0;
+            if (list.Count != 0)
+            {
+                Console.Clear();
+                foreach (var item in list)
+                {
+                    Console.WriteLine($"{i} {item.FirstName} {item.LastName}");
+                    i++;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Adresslistan är tyvärr tom");
+            }
 
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+
+    }
+    public static void PrintAllInfo(User mySelf)
+    {
+        Console.Clear();
+        Console.WriteLine("Info om den sökta användaren");
+        Console.WriteLine("----------------------------");
+        Console.WriteLine($"Namn: \t\t{mySelf.FirstName} {mySelf.LastName}");
+        Console.WriteLine($"Email: \t\t{mySelf.Email}");
+        Console.WriteLine($"Telefon: \t{mySelf.PhoneNumber}");
+        Console.WriteLine($"Adress: \t{mySelf.Address.StreetAdress} {mySelf.Address.StreetNumber}");
+        Console.WriteLine($"Postadress: \t{mySelf.Address.PostalCode} {mySelf.Address.City}");
+        
+    }
     public static void PrintOneUser()
     {
         try
         {
-            Console.Write("Skriv in förnamnet på den du söker: ");
+            Console.Clear();
+            PrintList();
+            Console.Write("Skriv in förnamnet på den du söker eller index: ");
+
             string searchUser = Console.ReadLine()!;
 
             if (searchUser != "")
             {
-                var mySelf = _userService.PrintOneUser(searchUser.ToLower());
-                Console.Clear();
-                Console.WriteLine("Info om den sökta användaren");
-                Console.WriteLine("----------------------------");
-                Console.WriteLine($"Namn: \t\t{mySelf.FirstName} {mySelf.LastName}");
-                Console.WriteLine($"Email: \t\t{mySelf.Email}");
-                Console.WriteLine($"Telefon: \t{mySelf.PhoneNumber}");
-                Console.WriteLine($"Adress: \t{mySelf.Address.StreetAdress} {mySelf.Address.StreetNumber}");
-                Console.WriteLine($"Postadress: \t{mySelf.Address.PostalCode} {mySelf.Address.City}");
-                Console.ReadLine();
+                bool result = Int32.TryParse(searchUser, out int number);
+                if (result == true)
+                {
+                    var mySelf = _userService.PrintOneUser(number);
+                    PrintAllInfo(mySelf);
+                }
+                else
+                {
+                    var mySelf = _userService.PrintOneUser(searchUser);
+                    PrintAllInfo(mySelf);
+                }
             }
             else
             {

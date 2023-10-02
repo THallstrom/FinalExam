@@ -1,6 +1,7 @@
 ﻿using AdressBook.Interface;
 using AdressBook.Models;
 using Newtonsoft.Json;
+using System.Xml.Linq;
 
 namespace AdressBook.Services;
 
@@ -27,6 +28,8 @@ public class UserService : IUserService
     public int DeleteUser(User user)
     {
         _users.Remove(user);
+        string json = JsonConvert.SerializeObject(_users);
+        fileHandler.SaveToFile(json);
         return _users.Count;
     }
 
@@ -43,6 +46,16 @@ public class UserService : IUserService
         }
         catch { }
         return _users[0];
+    }
+
+    public User PrintOneUser(int index) 
+    {
+        try
+        {
+            return _users[index];
+        }
+        catch { }
+        return null!;
     }
 
 }
