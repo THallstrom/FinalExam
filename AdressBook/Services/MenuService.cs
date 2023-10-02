@@ -118,7 +118,7 @@ public static class MenuService
                 Console.WriteLine("4. Ändra uppgifter om användare");
                 Console.WriteLine("5. Radera användare");
                 Console.WriteLine("0. Avsluta");
-                Console.Write("Välj det val som passar:");
+                Console.Write("Välj det val som passar: ");
                 var option = Console.ReadLine();
                 switch (option)
                 {
@@ -132,6 +132,7 @@ public static class MenuService
                         PrintAllUser();
                         break;
                     case "4":
+                        ChangeUserInfo();
                         break;
                     case "5":
                         DeleteUser();
@@ -191,7 +192,7 @@ public static class MenuService
     public static void PrintAllInfo(User mySelf)
     {
         Console.Clear();
-        Console.WriteLine("Info om den sökta användaren");
+        Console.WriteLine("Info om användaren");
         Console.WriteLine("----------------------------");
         Console.WriteLine($"Namn: \t\t{mySelf.FirstName} {mySelf.LastName}");
         Console.WriteLine($"Email: \t\t{mySelf.Email}");
@@ -235,6 +236,15 @@ public static class MenuService
 
             throw;
         }
+    }
+    public static void ChangeUserInfo()
+    {
+        PrintList();
+        Console.WriteLine("Vilket index önskar du ändra i adressboken");
+        int option = Convert.ToInt32(Console.ReadLine());
+        _userService.ChangeInfo(option);
+        PrintAllInfo(_userService.PrintOneUser(option));
+        Console.ReadLine();
 
     }
 }
