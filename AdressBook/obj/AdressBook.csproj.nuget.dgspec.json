@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\minim\\Source\\Repos\\FinalExam\\AdressBook\\AdressBook.csproj": {}
+    "C:\\EgnaProjekt\\FinalExam\\AdressBook\\AdressBook.csproj": {}
   },
   "projects": {
-    "C:\\Users\\minim\\Source\\Repos\\FinalExam\\AdressBook\\AdressBook.csproj": {
+    "C:\\EgnaProjekt\\FinalExam\\AdressBook\\AdressBook.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\minim\\Source\\Repos\\FinalExam\\AdressBook\\AdressBook.csproj",
+        "projectUniqueName": "C:\\EgnaProjekt\\FinalExam\\AdressBook\\AdressBook.csproj",
         "projectName": "AdressBook",
-        "projectPath": "C:\\Users\\minim\\Source\\Repos\\FinalExam\\AdressBook\\AdressBook.csproj",
+        "projectPath": "C:\\EgnaProjekt\\FinalExam\\AdressBook\\AdressBook.csproj",
         "packagesPath": "C:\\Users\\minim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\minim\\Source\\Repos\\FinalExam\\AdressBook\\obj\\",
+        "outputPath": "C:\\EgnaProjekt\\FinalExam\\AdressBook\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N9dnSoY7/guhIEVO8CJOIAVlZvfUe7AMuxXu0QynZrAR2RwqkGtFW2sZxLy1zDWbsEUELdnzUoCWH0XmCMtoww==",
+  "dgSpecHash": "Fce/qwPZ64ZDhuMD0qKBnEPeuEhc/hjpTTB/o6n1MbwveUAL7x2U44vhLl5Ce+/Un4u7nCfQSC4DWOYc8ODalA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\minim\\Source\\Repos\\FinalExam\\AdressBook\\AdressBook.csproj",
+  "projectFilePath": "C:\\EgnaProjekt\\FinalExam\\AdressBook\\AdressBook.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\minim\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],

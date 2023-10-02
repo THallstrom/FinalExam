@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QlsqNCOKjDAGDtG9fcVzrIjKspdEqfi0nydt73vKStJ8VWblhV97VV55nn4a4sXY7qLtOse5mWj2gVNIps3g4Q==",
+  "dgSpecHash": "fdomep95p9BQAPXXm1xg4YvCh5/dGnfOXTBLVp+nnC/iJF3sN20Qjvi0V/+oh52iyt68SwZlJwzAlxXiOy/fKA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\minim\\Source\\Repos\\FinalExam\\AdressBook_Test.tests\\AdressBook_Test.tests.csproj",
+  "projectFilePath": "C:\\EgnaProjekt\\FinalExam\\AdressBook_Test.tests\\AdressBook_Test.tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\minim\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\minim\\.nuget\\packages\\microsoft.codecoverage\\17.7.1\\microsoft.codecoverage.17.7.1.nupkg.sha512",

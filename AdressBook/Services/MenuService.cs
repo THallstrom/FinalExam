@@ -165,13 +165,21 @@ public static class MenuService
             if (searchUser != "")
             {
                 var mySelf = _userService.PrintOneUser(searchUser.ToLower());
-                Console.WriteLine(mySelf.FirstName + " " + mySelf.LastName);
+                Console.Clear();
+                Console.WriteLine("Info om den sökta användaren");
+                Console.WriteLine("----------------------------");
+                Console.WriteLine($"Namn: \t\t{mySelf.FirstName} {mySelf.LastName}");
+                Console.WriteLine($"Email: \t\t{mySelf.Email}");
+                Console.WriteLine($"Telefon: \t{mySelf.PhoneNumber}");
+                Console.WriteLine($"Adress: \t{mySelf.Address.StreetAdress} {mySelf.Address.StreetNumber}");
+                Console.WriteLine($"Postadress: \t{mySelf.Address.PostalCode} {mySelf.Address.City}");
+                Console.ReadLine();
             }
             else
             {
                 Console.WriteLine("Jag behöver ett namn att söka på");
             }
-            // Console.ReadLine();
+            Console.ReadLine();
         }
         catch (Exception)
         {
