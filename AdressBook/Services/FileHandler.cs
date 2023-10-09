@@ -2,7 +2,7 @@
 
 public class FileHandler
 {
-    private readonly string _filePath = @"C:\Nackademin\c-sharp\json.txt";
+    private readonly string _filePath = @"json";
     public void SaveToFile(string json)
     {
         using StreamWriter sr = new StreamWriter(_filePath);
@@ -11,8 +11,16 @@ public class FileHandler
 
     public string ReadFromFile()
     {
-        using StreamReader sr = new StreamReader(_filePath);
-        return sr.ReadToEnd();
-        
+        try
+        {
+            using StreamReader sr = new StreamReader(_filePath);
+            if (sr != null)
+                return sr.ReadToEnd();
+        }
+        catch (Exception)
+        {
+            
+        }
+        return null!;
     }
 }

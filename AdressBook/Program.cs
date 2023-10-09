@@ -7,7 +7,6 @@ namespace AdressBook
         static void Main(string[] args)
         {
             MenuService.MainMenu();
-            // test
         }
     }
 }

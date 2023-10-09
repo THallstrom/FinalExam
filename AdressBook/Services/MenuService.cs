@@ -149,10 +149,14 @@ public static class MenuService
                 }
             } while (true);
         }
-        catch (Exception ex)
+        catch (FileNotFoundException e) 
         {
-            Debug.WriteLine(ex.ToString());
-        }
+            Console.WriteLine("Filen hittades inte, var vänlig ända sökvägen");
+            Console.ReadLine();
+        };
+        //{
+        //    
+        //}
     }
 
     public static void PrintAllUser()
