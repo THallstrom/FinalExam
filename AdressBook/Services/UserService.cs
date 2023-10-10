@@ -1,6 +1,7 @@
 ﻿using AdressBook.Interface;
 using AdressBook.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace AdressBook.Services;
 
@@ -34,6 +35,17 @@ public class UserService : IUserService
     {
         _users.Remove(user);
         AddToListFile();
+        Console.WriteLine($"{user.FirstName} {user.LastName} raderades från listan");
+        Console.ReadLine();
+        return _users.Count;
+    }
+    public int DeleteUser(string user)
+    {
+        var userDelete = _users.FirstOrDefault(x => x.FirstName.ToLower() == user.ToLower())!;
+        _users.Remove(userDelete);
+        AddToListFile();
+        Console.WriteLine($"{userDelete.FirstName} {userDelete.LastName} raderades från listan");
+        Console.ReadLine();
         return _users.Count;
     }
 

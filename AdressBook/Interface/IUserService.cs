@@ -10,5 +10,6 @@ public interface IUserService
     public User PrintOneUser(int index);
     public void ChangeInfo(int index);
     public int DeleteUser(User user);
+    public int DeleteUser(string index);
     public void UpdateList();
 }

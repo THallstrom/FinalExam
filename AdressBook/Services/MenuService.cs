@@ -1,13 +1,13 @@
 ﻿using AdressBook.Interface;
 using AdressBook.Models;
 using System.Diagnostics;
+using System.Xml.Linq;
 
 namespace AdressBook.Services;
 
 public static class MenuService
 {
     private static readonly IUserService _userService = new UserService();
-    private static readonly FileHandler fileHandler = new FileHandler();
 
     static void Message(int num, User user)
     {
@@ -85,9 +85,17 @@ public static class MenuService
             if (list.Count != 0)
             {
                 PrintList();
-                Console.WriteLine("Vilken användare önskar du radera: ");
-                var option = Convert.ToInt32(Console.ReadLine());
-                _userService.DeleteUser(list[option]);
+                Console.Write("Vilken användare (index/förnamn) önskar du radera: ");       
+                string option = Console.ReadLine()!;
+                bool result = Int32.TryParse(option, out int number);
+                if (result != true)
+                {
+                    _userService.DeleteUser(option);
+                } 
+                else
+                { 
+                    _userService.DeleteUser(list[number]);
+                }
             }
             else
             {
@@ -97,10 +105,8 @@ public static class MenuService
         }
         catch (Exception)
         {
-
-            throw;
         }
-
+  
     }
 
     public static void MainMenu()
@@ -154,9 +160,7 @@ public static class MenuService
             Console.WriteLine("Filen hittades inte, var vänlig ända sökvägen");
             Console.ReadLine();
         };
-        //{
-        //    
-        //}
+
     }
 
     public static void PrintAllUser()
@@ -237,8 +241,6 @@ public static class MenuService
         }
         catch (Exception)
         {
-
-            throw;
         }
     }
     public static void ChangeUserInfo()
