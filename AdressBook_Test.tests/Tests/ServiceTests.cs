@@ -39,33 +39,6 @@ namespace AdressBook_Test.tests.Tests
             Assert.NotEmpty(restult);
         }
 
-        //[Fact]
-        //void UserService_DeleteUser_ShouldReturnNotEqualWhenDeleted()
-        //{
-        //    // Arrange
-
-        //    // Act
-        //    int numInList = userService.AddUser(user);
-        //    int numAfterDelete = userService.DeleteUser(user);
-        //    // Assert
-
-        //    Assert.NotEqual(numInList, numAfterDelete);
-        //}
-
-        //[Fact]
-        //void UserService_DeleteUser_ShouldReturnEqualWhenWrongUserDeleted()
-        //{
-        //    // Arrange
-        //    var user1 = new User();
-        //    // Act
-        //    int numInList = userService.AddUser(user);
-        //    int numAfterDelete = userService.DeleteUser(user1);
-        //    // numAfterDelete = userService.DeleteUser(user);
-            
-        //    // Assert
-        //    Assert.Equal(numInList, numAfterDelete);
-        //}
-
         [Fact]
         void UserService_ReturnOneUser_ShouldReturnEqualIfUserIsInList()
         {
